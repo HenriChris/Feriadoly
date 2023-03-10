@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { style } from '../../global/global';
+import { Shadow, style } from '../../global/global';
 
 export const ScrollerWrapper = styled.div`
     margin: 12px auto 35px auto;
@@ -12,7 +12,7 @@ export const Title = styled.span`
     margin-left: 10px;
 `;
 
-export const StyledScroller = styled.div`
+export const StyledScroller = styled(Shadow)`
     height : 327px;
 
     background: ${style.colors.lightBeige};
