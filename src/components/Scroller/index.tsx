@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Holidays, HolidaysDate, HolidaysText, ScrollerWrapper, StyledScroller, Title } from './style';
+import { Holidays, HolidaysDate, HolidaysText, ScrollerWrapper, StyledScroller, ScrollerTitle, ScrollerContent } from './style';
 
 type datetime = {
     day: number,
@@ -117,18 +117,20 @@ function Scroller () {
 
     return (
         <ScrollerWrapper>
-        <Title>Feriados em 2023 :</Title>
-        <StyledScroller> {/* shadow */}
-            {
-            holidays?.map((holiday) =>
-                <ScrollerElement
-                    key={holiday.name}
-                    date={holiday.date}
-                    name={holiday.name}
-                />
-                )
-            }
-        </StyledScroller>
+            <ScrollerTitle>Feriados em 2023 :</ScrollerTitle>
+            <ScrollerContent>
+                <StyledScroller>
+                    {
+                    holidays?.map((holiday) =>
+                        <ScrollerElement
+                            key={holiday.name}
+                            date={holiday.date}
+                            name={holiday.name}
+                        />
+                        )
+                    }
+                </StyledScroller>
+            </ScrollerContent>
         </ScrollerWrapper>
     )
 }
