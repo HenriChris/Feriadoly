@@ -27,10 +27,11 @@ export const Bottom = styled.div`
     justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
-    width: 70vw;
+    width: 1000px;
 `;
 
 export const Shadow = styled.div`
+    border: 6px solid ${style.colors.pink};
     box-shadow:
     0 4px 4px rgba(0, 0, 0, 0.1),
     0 12px 8px rgba(0, 0, 0, 0.06),

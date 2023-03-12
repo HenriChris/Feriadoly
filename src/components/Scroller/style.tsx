@@ -36,7 +36,6 @@ export const StyledScroller = styled.div`
 `;
 
 export const ScrollerContent = styled(Shadow)`
-    border : 6px solid ${style.colors.pink};
     background: ${style.colors.lightBeige};
     padding-right: 10px;
     border-radius: 15px;
