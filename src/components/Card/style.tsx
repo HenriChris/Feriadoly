@@ -5,8 +5,7 @@ export const StyledCard = styled(Shadow)`
     text-align: start;
     color : ${style.colors.brownishRed};
     background: ${style.colors.lightBeige};
-    border : 6px solid ${style.colors.pink};
-    height: 300px;
+    height: 310px;
     width: 600px;
     border-radius: 15px;
 
