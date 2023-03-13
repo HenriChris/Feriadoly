@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
 import calendarButton from '../../assets/calendarButton.png';
 import { cardInfo, DateContext, holidayDefault, holidayNull } from '../../context/DateContextProvider';
+import CalendarServices from '../../services/CalendarServices';
 import { CalendarWrapper, CalendarHeader, CalendarButtonLeft, CalendarButtonLeftOff, CalendarHeaderTitle, CalendarButtonRight, CalendarButtonRightOff, CalendarWeekWrapper, CalendarDay, CalendarDayNumberOff, CalendarDayNumberOn, CalendarDayNumber } from './style';
 
-const holidaysDummy : cardInfo[] = [
+/* const holidaysDummy : cardInfo[] = [
     {
         name: 'Null',
         description: 'Null',
@@ -81,7 +82,7 @@ const holidaysDummy : cardInfo[] = [
             }
         }
     },
-];
+]; */
 
 type month = {
     title : string,
@@ -167,7 +168,14 @@ function Calendar() {
     const { dayNumber, monthNumber, setDayNumber, setMonthNumber, setHoliday } = useContext(DateContext);
     const [holidays, setHolidays] = useState<cardInfo[]>([holidayDefault]);
 
-    useEffect(() => {setHolidays(holidaysDummy)}, []); /* Aqui vai entrar os dados da api externa */
+    useEffect(() => {
+        CalendarServices.getHolidaysCalendar('BR', '2023', '', '', 'c830eba06186831261fab92aa4b6325727b35a8e').then(response => {
+            console.log(response?.data.response.holidays);
+            setHolidays(response?.data.response.holidays);
+        })
+    }, [])
+
+    /* useEffect(() => {setHolidays(holidaysDummy)}, []); */
     useEffect(() => {setHoliday(holidays.find((element) => element.date.datetime.day === dayNumber && element.date.datetime.month === monthNumber) ?? holidayNull)}, [dayNumber]);
 
     function decrementMonth () {
