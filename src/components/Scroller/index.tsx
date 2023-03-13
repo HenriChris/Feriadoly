@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import scrollerServices from '../../services/scrollerServices';
 import { Holidays, HolidaysDate, HolidaysText, ScrollerWrapper, StyledScroller, ScrollerTitle, ScrollerContent } from './style';
 
 type datetime = {
@@ -31,7 +32,7 @@ function ScrollerElement ({
 function Scroller () {
     const [holidays, setHolidays] = useState<scrollerInfo[]>();
  
-    const feriados : scrollerInfo[] = [
+    /* const feriados : scrollerInfo[] = [
         {
             name: 'New Years Day',
             date: {
@@ -113,7 +114,15 @@ function Scroller () {
             }
         }
     ]
-    useEffect(() => {setHolidays(feriados)}, [])
+    useEffect(() => {setHolidays(feriados)}, []) */
+
+    useEffect(() => {
+        scrollerServices.getHolidays('BR', '2023', '', '', 'c830eba06186831261fab92aa4b6325727b35a8e').then(response => {
+            console.log(response?.data.response.holidays);
+            setHolidays(response?.data.response.holidays);
+        })
+    }, [])
+
 
     return (
         <ScrollerWrapper>
