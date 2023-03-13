@@ -1,19 +1,14 @@
-import React from 'react';
 import Header from './components/Header';
 import Scroller from './components/Scroller';
-import Calendar from './components/Calendar';
-import Card from './components/Card';
-import { Bottom, Page } from './global/global';
+import Bottom from './components/Bottom';
+import { Page } from './global/global';
 
 function App() {
   return (
     <Page>
       <Header />
       <Scroller />
-      <Bottom>
-        <Calendar />
-        <Card />
-      </Bottom>
+      <Bottom/>
     </Page>
   );
 }
