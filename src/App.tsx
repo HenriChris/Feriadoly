@@ -1,9 +1,15 @@
-import React from 'react';
+import Header from './components/Header';
+import Scroller from './components/Scroller';
+import Bottom from './components/Bottom';
+import { Page } from './global/global';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Page>
+      <Header />
+      <Scroller />
+      <Bottom/>
+    </Page>
   );
 }
 
