@@ -5,7 +5,8 @@ export const CalendarWrapper = styled(Shadow)`
     background-color: ${style.colors.lightBeige};
     
     border-radius: 15px;
-    height: 314px;
+    /* height: 314px; */
+    height: fit-content;
     width: 350px;
     color: ${style.colors.brownishRed};
     user-select: none;
