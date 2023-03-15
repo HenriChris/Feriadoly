@@ -23,25 +23,31 @@ function CardContent ({
 
 function Card () {
 
-    const { holiday } = useContext(DateContext);
+    const { dayNumber ,holiday } = useContext(DateContext);
 
     return (
         <StyledCard>
-            {holiday?.name !== ''
-            ? 
-            <CardContent
-            key={holiday?.name ?? holidayDefault.name}
-            date={holiday?.date ?? holidayDefault.date}
-            name={holiday?.name ?? holidayDefault.name}
-            description={holiday?.description ?? holidayDefault.description}
-            />
-            : 
-            <ContentOff>
-                Não há feriados nesse dia :(
-            </ContentOff>
+            {dayNumber !== 0 
+                ?
+                holiday?.name !== ''
+                    ? 
+                    <CardContent
+                    key={holiday?.name ?? holidayDefault.name}
+                    date={holiday?.date ?? holidayDefault.date}
+                    name={holiday?.name ?? holidayDefault.name}
+                    description={holiday?.description ?? holidayDefault.description}
+                    />
+                    : 
+                    <ContentOff>
+                        Não há feriados nesse dia :(
+                    </ContentOff>
+                :
+                <ContentOff>
+                    Escolha um dia :)
+                </ContentOff>
             }
         </StyledCard>
     )
-}
+};
 
 export default Card;

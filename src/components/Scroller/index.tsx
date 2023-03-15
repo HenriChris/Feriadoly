@@ -32,7 +32,7 @@ function ScrollerElement ({
 function Scroller () {
     const [holidays, setHolidays] = useState<scrollerInfo[]>();
  
-    /* const feriados : scrollerInfo[] = [
+/*     const feriados : scrollerInfo[] = [
         {
             name: 'New Years Day',
             date: {
@@ -118,7 +118,6 @@ function Scroller () {
 
     useEffect(() => {
         ScrollerServices.getHolidaysScroller('BR', '2023', '', '', 'c830eba06186831261fab92aa4b6325727b35a8e').then(response => {
-            console.log(response?.data.response.holidays);
             setHolidays(response?.data.response.holidays);
         })
     }, []);
@@ -142,6 +141,6 @@ function Scroller () {
             </ScrollerContent>
         </ScrollerWrapper>
     )
-}
+};
 
 export default Scroller;
