@@ -7,7 +7,12 @@ export const StyledCard = styled(Shadow)`
     color : ${style.colors.brownishRed};
     background: ${style.colors.lightBeige};
     height: 314px;
-    width: 600px;
+    width: 60%;
+    @media (max-width: 768px) {
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;  
+    }
     border-radius: 15px;
 `;
 

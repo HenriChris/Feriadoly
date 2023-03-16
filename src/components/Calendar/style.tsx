@@ -7,7 +7,13 @@ export const CalendarWrapper = styled(Shadow)`
     border-radius: 15px;
     /* height: 314px; */
     height: fit-content;
-    width: 350px;
+    width: 35%;
+    @media (max-width: 768px) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        width: 95%;  
+    }
     color: ${style.colors.brownishRed};
     user-select: none;
 `;
