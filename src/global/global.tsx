@@ -19,7 +19,6 @@ export const Page = styled.div`
     width: 100vw;
     font-family: sans-serif;
     font-weight: 600;
-    background-color: ${style.colors.lightPink};
 `;
 
 export const Bottom = styled.div`
